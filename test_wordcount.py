@@ -14,6 +14,10 @@ class WordCountTest(unittest.TestCase):
         with self.assertRaises(TypeError):
             wordcount.word_count(None)
 
+    def test_unique_words_ignore_case(self):
+        self.assertEqual(wordcount.unique_word_count("Go go GO"), 1)
+        self.assertEqual(wordcount.unique_word_count(""), 0)
+
 
 if __name__ == "__main__":
     unittest.main()
